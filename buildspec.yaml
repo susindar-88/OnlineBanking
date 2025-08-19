@@ -26,5 +26,4 @@ phases:
 artifacts:
   files:
     - publish/**/* # Include all files in the 'publish' folder
-  discard-paths: no
-  base-directory: 'publish'
+  discard-paths: yes
