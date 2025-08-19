@@ -1,0 +1,29 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      dotnet: 6.0 # Specify the .NET version
+    commands:
+      - echo Installing dependencies...
+      - dotnet restore # Restore NuGet packages
+
+  pre_build:
+    commands:
+      - echo Running pre-build steps...
+      - dotnet build --no-restore # Build the project without restoring dependencies
+
+  build:
+    commands:
+      - echo Building the application...
+      - dotnet publish -c Release -o ./publish # Publish the app to the 'publish' folder
+
+  post_build:
+    commands:
+      - echo Post-build steps...
+      - echo Build completed successfully.
+
+artifacts:
+  files:
+    - publish/**/* # Include all files in the 'publish' folder
+  discard-paths: no
