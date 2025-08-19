@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      dotnet: 6.0 # Specify the .NET version
+      dotnet: 8.0 # Specify the .NET version
     commands:
       - echo Installing dependencies...
       - dotnet restore # Restore NuGet packages
